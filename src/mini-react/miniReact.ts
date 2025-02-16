@@ -1,4 +1,4 @@
-import { Props, VDOMElement, FunctionalComponent } from '../types'
+import { Props, VDOMElement, FunctionalComponent } from './types'
 
 export const miniCreateElement = (
   type: string | FunctionalComponent,
