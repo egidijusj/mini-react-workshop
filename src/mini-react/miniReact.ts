@@ -1,4 +1,6 @@
-import { Props, VDOMElement, FunctionalComponent } from './types'
+import { Props, VDOMElement, FunctionalComponent, Instance } from './types'
+
+let rootInstance: Instance | null = null
 
 export const miniCreateElement = (
   type: string | FunctionalComponent,
@@ -19,6 +21,7 @@ export const unmount = (container: HTMLElement): void => {
   Array.from(container.childNodes).forEach((node) => {
     node.remove()
   })
+  rootInstance = null
 }
 
 export const useState = <T>(initialState: T): [T, (newState: T) => void] => {
